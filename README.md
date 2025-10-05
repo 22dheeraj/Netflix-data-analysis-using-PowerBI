@@ -1,92 +1,73 @@
-📊 Netflix Power BI Analysis Dashboard
-📁 Project Overview
+# 🎬 Netflix Power BI Dashboard  
 
-This Power BI dashboard provides a comprehensive analysis of Netflix’s content library, focusing on Movies and TV Shows across different countries, release years, and ratings. The visualization helps uncover insights into Netflix’s content distribution, production trends, and audience targeting over time.
+## 📊 Project Overview  
+This project presents an **interactive Power BI dashboard** built to analyze Netflix’s vast content library.  
+It visualizes insights on **Movies and TV Shows** across countries, release years, ratings, and directors — helping understand Netflix’s global content strategy and growth patterns.  
 
-🎯 Objectives
+---
 
-Analyze the total number of Movies and TV Shows available on Netflix.
+## 🎯 Objectives  
+- Analyze the **total number of Movies and TV Shows** on Netflix.  
+- Explore **content release trends** over time.  
+- Identify **leading countries** in content production.  
+- Examine **content ratings and genres** distribution.  
+- Enable **interactive filtering** by Show Type, Release Year, and Country.  
 
-Visualize content growth trends based on release years.
+---
 
-Identify top contributing countries to Netflix’s content library.
+## 🧩 Dashboard Features  
 
-Examine distribution of shows by type, rating, and directors.
+| 🔍 Visual | 🧠 Description |
+|------------|----------------|
+| **Cards** | Show key metrics – Total Movies, Total TV Shows, and Overall Shows. |
+| **Donut Chart (Type)** | Visualize the proportion of Movies vs TV Shows. |
+| **Line Chart (Release Year)** | Observe content production trends over decades. |
+| **Donut Chart (Directors)** | Display total number of directors involved. |
+| **Map (Country)** | View geographical distribution of Netflix content. |
+| **Bar Chart (Rating)** | Analyze the spread of shows by maturity rating. |
 
-Provide interactive filtering for Show Type, Release Year, and Country.
+---
 
-📈 Key Insights
+## 📈 Key Insights  
+- 📺 **Total Content:** 8,807 titles  
+- 🎞️ **Movies:** 6,131 (≈70%)  
+- 📡 **TV Shows:** 2,676 (≈30%)  
+- 🎬 **Total Directors:** 4,527  
+- 🚀 Netflix’s content production **skyrocketed post-2015**, reflecting global expansion.  
+- 🔞 **TV-MA** and **TV-14** dominate, showing focus on mature audiences.  
+- 🌍 **USA, India, and UK** lead in total content creation.  
 
-Total Shows: 8,807
+---
 
-Movies: 6,131 (≈70%)
+## ⚙️ Tools & Technologies  
+- **Power BI Desktop** – Dashboard creation and visualization  
+- **Power Query Editor** – Data cleaning and transformation  
+- **DAX (Data Analysis Expressions)** – Custom measures and KPIs  
+- **Excel / CSV Dataset** – Source data for analysis  
 
-TV Shows: 2,676 (≈30%)
+---
 
-Total Directors: 4,527
+## 🧾 Dataset Description  
+| Column | Description |
+|---------|--------------|
+| `show_id` | Unique ID of the show |
+| `type` | Movie / TV Show |
+| `title` | Name of the content |
+| `director` | Director name |
+| `country` | Country of origin |
+| `date_added` | Date added to Netflix |
+| `release_year` | Year of release |
+| `rating` | Audience rating (e.g., TV-MA, PG-13) |
+| `duration` | Length (minutes / seasons) |
+| `listed_in` | Genre / category |
+| `description` | Short summary of the content |
 
-Peak content release occurred after 2015, highlighting Netflix’s massive production expansion.
+---
 
-TV-MA and TV-14 ratings dominate, showing Netflix’s focus on mature audiences.
+## 🧮 DAX Measures Used  
 
-The USA, India, and UK lead in content production.
-
-🧩 Dashboard Features
-Visual	Description
-Card Visuals	Display total counts of Movies, TV Shows, and overall content.
-Pie Chart – Total Shows by Type	Compares Movies vs TV Shows percentage.
-Line Chart – Total Shows by Release Year	Shows Netflix content growth trend over time.
-Pie Chart – Total Directors	Represents director contributions across content types.
-Map – Total Shows by Country	Highlights geographical distribution of Netflix content.
-Bar Chart – Total Shows by Rating	Displays the distribution of content by maturity rating.
-⚙️ Tools and Technologies
-
-Power BI Desktop – Data visualization and dashboard creation
-
-Excel / CSV dataset – Netflix dataset (contains ~8.8K rows, 12+ columns)
-
-DAX (Data Analysis Expressions) – Used for measures and KPIs
-
-Data Cleaning & Transformation – Power Query Editor
-
-📂 Dataset Description
-
-The dataset includes the following key columns:
-
-show_id – Unique ID of the show
-
-type – Movie / TV Show
-
-title – Name of the content
-
-director – Director of the show
-
-country – Country of origin
-
-date_added – Date content was added to Netflix
-
-release_year – Original release year
-
-rating – Audience rating (e.g., TV-MA, PG-13)
-
-duration – Duration in minutes or seasons
-
-listed_in – Genre/category
-
-description – Short content summary
-
-🧮 DAX Measures Used
+```DAX
 Total Movies = CALCULATE(COUNTROWS(Netflix), Netflix[type] = "Movie")
 Total TV Shows = CALCULATE(COUNTROWS(Netflix), Netflix[type] = "TV Show")
 Total Shows = COUNTROWS(Netflix)
 Total Directors = DISTINCTCOUNT(Netflix[director])
-
-🧠 Insights & Business Impact
-
-The rapid growth in content post-2015 indicates Netflix’s global expansion strategy.
-
-Dominance of mature content (TV-MA) suggests a focus on adult audiences.
-
-Regional analysis helps identify emerging content-producing markets.
-
-The dashboard can guide content acquisition and localization strategies.
